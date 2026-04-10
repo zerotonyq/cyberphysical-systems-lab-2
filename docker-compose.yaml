@@ -1,0 +1,14 @@
+services:
+
+  ollama-fastapi:
+    image: shliakhturov/cyberphiz_nlp:latest
+    container_name: cyberphiz_nlp
+    ports:
+      - "8000:8000"
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
